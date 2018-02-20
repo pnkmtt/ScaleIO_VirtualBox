@@ -32,6 +32,7 @@ Vagrant.configure("2") do |config|
         #vb.gui = true
         # found bug in virtualbox https://github.com/hashicorp/vagrant/issues/8107
         # how to manage disks http://zacklalanne.me/using-vagrant-to-virtualize-multiple-hard-drives/
+        # anotehr good source of information http://cobbaut.blogspot.com/2014/04/vagrant-creating-10-vms-with-6-disks.html
         #vb.customize ['createmedium', '--filename', node[:hostname], '--sizebytes', node[:disk], '--format', 'VDI']
         #vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', node[:hostname] ]
         vb.customize [
@@ -42,7 +43,7 @@ Vagrant.configure("2") do |config|
       end
      end
   end
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo mkfs.ext4 /dev/sdb
-  SHELL
+ # config.vm.provision "shell", inline: <<-SHELL
+  #  sudo mkfs.ext4 /dev/sdb
+  #SHELL
 end
