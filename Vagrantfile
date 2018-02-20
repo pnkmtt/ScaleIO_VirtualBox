@@ -31,6 +31,7 @@ Vagrant.configure("2") do |config|
         #vb.customize ["storagectl", :id, "--add", "sata", "--name", "SATA" , "--portcount", 2, "--hostiocache", "on"]
         #vb.gui = true
         # found bug in virtualbox https://github.com/hashicorp/vagrant/issues/8107
+        # how to manage disks http://zacklalanne.me/using-vagrant-to-virtualize-multiple-hard-drives/
         #vb.customize ['createmedium', '--filename', node[:hostname], '--sizebytes', node[:disk], '--format', 'VDI']
         #vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', node[:hostname] ]
         vb.customize [
